@@ -11,7 +11,6 @@
 #define DEFBG 40
 #define DEFFG 97
 void debugStrings();
-void mapPrint();
 void printer(int posX, int posY, int bg, int fg, char * output){ //{{{
 	if(bg > 0xFFFFFF)
 		bg=0xFFFFFF;
@@ -280,89 +279,31 @@ void indexBox(){ //{{{
 	int colBox = 91;
 	int colIns = 40;
 	int table= 40;
-	int ofs = 15, ofx=18;
-	sprinter(ofx+4,ofs+0,colIns, colBox,     "┌──┴┐");
+	int ofs = 15, ofx=50;
+	sprinter(ofx+4,ofs+0,colIns, colBox,     "┌───┐");
 	sprinter(ofx+1,ofs+1,colIns, colBox,  "┌──┘   └┐");
-	sprinter(ofx,ofs+ 2, colIns, colBox, "┌┘ INDEX └──");
+	sprinter(ofx,ofs+ 2, colIns, colBox, "┬┘   ──┐ └──");
 	sprinter(ofx,ofs+ 3, colIns, colBox, "│                        │");
-	sprinter(ofx,ofs+ 4, colIns, colBox, "│ $ curl she-a.eu/simple │");
-	sprinter(ofx,ofs+ 5, colIns, colBox, "│ $ curl she-a.eu/index  │");
-	sprinter(ofx,ofs+ 6, colIns, colBox, "│ $ curl she-a.eu/about  │");
-	sprinter(ofx,ofs+ 7, colIns, colBox, "│ $ curl she-a.eu        │");
-	sprinter(ofx,ofs+ 8, colIns, colBox, "└┐$ curl _              ┌┘");
+	sprinter(ofx,ofs+ 4, colIns, colBox, "│ Thank you so much for  │");
+	sprinter(ofx,ofs+ 5, colIns, colBox, "│ reading around here on │");
+	sprinter(ofx,ofs+ 6, colIns, colBox, "│     my website ^-^     │");
+	sprinter(ofx,ofs+ 7, colIns, colBox, "│                        │");
+	sprinter(ofx,ofs+ 8, colIns, colBox, "└┐  inspired by ysap.sh ┌┘");
 	sprinter(ofx+1,ofs+9,colIns, colBox,  "└──────────────────────┘");
 	sprinter(ofx+16,ofs+0,table, colBox,                 " ┌───┐");
 	sprinter(ofx+16,ofs+1,table, colBox,                 "┌┘   └──┐");
-	sprinter(ofx+12,ofs+ 2,table, colBox,            "────┘ cURLs └┬");
-	for(int i=0; i<5; i++){
-		sprinter(ofx+2, ofs+4+i, colIns, 32, "$");
-		sprinter(ofx+4, ofs+4+i, colIns, 94, "curl");}
+	sprinter(ofx+12,ofs+ 2,table, colBox,            "────┘ ┌──   └┬");
 	
-	sprinter(ofx+9, ofs+4, colIns, 93, "she-a.eu");
-	sprinter(ofx+9, ofs+5, colIns, 93, "she-a.eu");
-	sprinter(ofx+9, ofs+6, colIns, 93, "she-a.eu");
-	sprinter(ofx+9, ofs+7, colIns, 93, "she-a.eu");
+	sprinter(ofx+2, ofs+4, colIns, 97, "Thank you so much for");
+	sprinter(ofx+2, ofs+5, colIns, 97, "reading around here on");
+	sprinter(ofx+6, ofs+6, colIns, 97, "my website ^-^");
+	sprinter(ofx+4, ofs+8, colIns, 97, "inspired by ysap.sh");
 
-	sprinter(ofx+17, ofs+4, colIns, 95, "/simple");
-	sprinter(ofx+17, ofs+5, colIns, 95, "/index");
-	sprinter(ofx+17, ofs+6, colIns, 95, "/about");
-	sprinter(ofx+ 9, ofs+8, colIns, 93, "sh\e[5m_");
-}  //}}}
-
-
-void socalBox(){ //{{{
-	int colBox = 91;
-	int colIns = 40;
-	int table= 40;
-	int ofs = 12, ofx=50;
-	sprinter(ofx+4,ofs+ 0,table, colBox,     "┌────┐"                   );
-	sprinter(ofx+2,ofs+ 1,table, colBox,   "┌─┘    └┐"                  );
-	sprinter(ofx,ofs+ 2, table,  colBox, "┌─┘       │"                 );
-	sprinter(ofx,ofs+ 3, table,  colBox, "│ socials └──────┘ friends │");
-	sprinter(ofx,ofs+ 4, colIns, colBox, "│                          │");
-	sprinter(ofx,ofs+ 5, colIns, colBox, "┤    libera   /msg se-a    ├");
-	sprinter(ofx,ofs+ 6, colIns, colBox, "│     email    nu@she-a.eu │");
-	sprinter(ofx,ofs+ 7, colIns, colBox, "│    matrix   @nu:she-a.eu │");
-	sprinter(ofx,ofs+ 8, colIns, colBox, "│    github   @nushea      │");
-	sprinter(ofx,ofs+ 9, colIns, colBox, "│   bluesky   @nu.she-a.eu │");
-	sprinter(ofx,ofs+10, colIns, colBox, "└┐  discord   @.se.a      ┌┘");
-	sprinter(ofx+1,ofs+11,colIns,colBox,  "│ not fedi   @nu@she-a.eu│");
-	sprinter(ofx+1,ofs+12,colIns,colBox,  "└────────────────────────┘");
-	
-	sprinter(ofx+18,ofs+ 0, table,  colBox,  "┌────┐");
-	sprinter(ofx+17,ofs+ 1, table,  colBox, "┌┘    └─┐");
-	sprinter(ofx+17,ofs+ 2, table,  colBox, "│       └─┐");
-
-	sprinter(ofx+5,ofs+5,colIns, 95, "libera");
-	sprinter(ofx+14,ofs+5,colIns, 96, "/msg");
-	sprinter(ofx+19,ofs+5,colIns, 97, "se-a");
-
-	sprinter(ofx+6,ofs+6,colIns,  97, "email");
-	sprinter(ofx+15,ofs+6,colIns, 97, "nu@she-a.eu");
-	sprinter(ofx+17,ofs+6,colIns, 96, "@");
-
-	sprinter(ofx+5,ofs+7,colIns,  91, "matrix");
-	sprinter(ofx+14,ofs+7,colIns, 97, "@nu:she-a.eu");
-	sprinter(ofx+14,ofs+7,colIns, 96, "@");
-	sprinter(ofx+17,ofs+7,colIns, 96, ":");
-
-	sprinter(ofx+5,ofs+8,colIns,  92, "github");
-	sprinter(ofx+14,ofs+8,colIns, 97, "@nushea");
-	sprinter(ofx+14,ofs+8,colIns, 96, "@");
-
-	sprinter(ofx+4,ofs+9,colIns,  94, "bluesky");
-	sprinter(ofx+14,ofs+9,colIns, 97, "@nu.she-a.eu");
-	sprinter(ofx+14,ofs+9,colIns, 96, "@");
-
-	sprinter(ofx+4,ofs+10,colIns,  96, "discord");
-	sprinter(ofx+14,ofs+10,colIns, 97, "@.se.a");
-	sprinter(ofx+14,ofs+10,colIns, 96, "@");
-
-	sprinter(ofx+3,ofs+11,colIns,  90, "not fedi   @nu@she-a.eu");
 }  //}}}
 
 void activBox(){//{{{
 	int colBox = 91;
+	int colIns = 0x181825;
 	int ofY=3, ofX=25;
 	
 	sprinter(ofX, ofY  ,   40, colBox, "┌─────────────────────────────────────────────────────┐");
@@ -381,32 +322,30 @@ void activBox(){//{{{
 	sprinter(ofX, ofY+13,  40, colBox, "│                                                     │");
 	sprinter(ofX, ofY+14,  40, colBox, "└─────────────────────────────────────────────────────┘");
 
-	sprinter(32, 4, DEFBG, 97, "Hi, this is Shea, this is Shea's website!");
-	sprinter(32, 6, DEFBG, 97, "My current projects are: ");
-	sprinter(28, 7, DEFBG, 97, "→maintaining my email service set up through the");
-	sprinter(27, 8, DEFBG, 97, "emailwizz scripts");
-	sprinter(28, 9, DEFBG, 97, "→maintaining the matrix instance through synapse");
-	sprinter(27,10, DEFBG, 97, "     so i may have an account on my domain");
-	sprinter(28,11, DEFBG, 97, "     →maintaining the nginx server to serve these");
-	sprinter(27,12, DEFBG, 97, "objects that refer to my         projects");
-	sprinter(28,13, DEFBG, 97, "→creating these comfy~~          pages");
-	sprinter(28,14, DEFBG, 97, "→accomodating myself w             git");
-	sprinter(27,15, DEFBG, 97, "→kissin      my partner");
+	sprinter(43, 4, DEFBG, 97, "Hi, this is Shea!!");
+	sprinter(32, 6, DEFBG, 97, "I'm just a little girl of 22 years old that");
+	sprinter(28, 7, DEFBG, 97, "likes doing all kinda unrelated stuff.");
+	sprinter(28, 9, DEFBG, 97, "For one i know basic crochet and have rudimentary");
+	sprinter(27,10, DEFBG, 97, "     drawing skills, and know how to solve some");
+	sprinter(27,11, DEFBG, 97, "     rubix cubes like the 3x3, mirror and the skewb");
+	sprinter(28,12, DEFBG, 97, "I am like 1000ELO in chess and like plaing it on");
+	sprinter(28,13, DEFBG, 97, "long train rides.");
+	sprinter(28,14, DEFBG, 97, "I am part of the CYRA worldbuilding project altho");
+	sprinter(30,15, DEFBG, 97, "i need to participate          more        at it");
+	sprinter(28,16, DEFBG, 97, "I cant wait to live w             my            gf");
 }//}}}
-
 
 
 void regularOutput(){
 	sprinter(1, 1, 32, DEFBG, "$");
 	sprinter(3, 1, 94, DEFBG, "curl");
 	sprinter(8, 1, 93, DEFBG, "she-a.eu");
-	sprinter(16,1, 95, DEFBG, "/simple");
+	sprinter(16,1, 95, DEFBG, "/about/simple");
 	sprinter(WIDTH-20, 1, 37, DEFBG, "(minimum size: 80x24)");
-	sprinter(26,1, 37, DEFBG,"World's most boring trannie\n");
+	sprinter(31,1, 37, DEFBG,"World's most boring trannie\n");
 	activBox();
 	shoru();
 	indexBox();	
-	socalBox();	
 }
 
 int main() {
