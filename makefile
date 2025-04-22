@@ -2,6 +2,7 @@
 .PHONY: simpl
 .PHONY: index
 .PHONY: about
+.PHONY: pnf
 .PHONY: about-simple
 .PHONY: index-simple
 all:
@@ -36,3 +37,7 @@ index-simple:
 	rm index-simple || true
 	gcc index-simple.c -o index-simple
 	./index-simple
+pnf:
+	rm pnf || true
+	gcc pnf.c -o pnf
+	./pnf
