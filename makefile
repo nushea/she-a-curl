@@ -3,6 +3,7 @@
 .PHONY: index
 .PHONY: about
 .PHONY: about-simple
+.PHONY: index-simple
 all:
 	gcc main.c -o curl
 	gcc about.c -o about
@@ -31,3 +32,7 @@ index:
 	rm index || true
 	gcc index.c -o index
 	./index
+index-simple:
+	rm index-simple || true
+	gcc index-simple.c -o index-simple
+	./index-simple
